@@ -1,4 +1,4 @@
-# fuse-box-ng-template-plugin
+# fuse-box-ng-template-plugin [![](https://img.shields.io/npm/dm/fuse-box-ng-template-plugin.svg?style=flat)](https://www.npmjs.org/package/fuse-box-ng-template-plugin) [![npm version](https://badge.fury.io/js/fuse-box-ng-template-plugin.svg)](https://www.npmjs.com/package/fuse-box-ng-template-plugin) [![Build Status](https://img.shields.io/travis/TobiasTimm/fuse-box-ng-template-plugin/master.svg)](https://travis-ci.org/tobiastimm/fuse-box-ng-template-plugin)
 
 > AngularJS template plugin for [fuse-box](https://github.com/fuse-box/fuse-box)
 
@@ -18,6 +18,20 @@ With `yarn`
 
 ```shell
 yarn add --dev fuse-box-ng-template-plugin
+```
+
+## Usage
+
+Just call `NgTemplatePlugin` within the FuseBox plugins array.
+
+```js
+const { FuseBox } = require("fuse-box");
+const NgTemplatePlugin = require("fuse-box-ng-template-plugin");
+
+const fuse = FuseBox.init({
+  homeDir: "./src",
+  plugins: [NgTemplatePlugin()]
+});
 ```
 
 ## License
