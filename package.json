@@ -1,6 +1,6 @@
 {
   "name": "fuse-box-ng-template-plugin",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Includes your AngularJS templates into the fuse-box bundle",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -8,7 +8,8 @@
   "bugs": {
     "url": "https://github.com/TobiasTimm/fuse-box-ng-template-plugin/issues"
   },
-  "homepage": "https://github.com/TobiasTimm/fuse-box-ng-template-plugin#readme",
+  "homepage":
+    "https://github.com/TobiasTimm/fuse-box-ng-template-plugin#readme",
   "author": {
     "name": "Tobias Timm",
     "email": "tbs.timm@gmail.com",
@@ -37,14 +38,7 @@
       "^.+\\.tsx?$": "ts-jest"
     },
     "testRegex": "(.*(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ]
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
   },
   "devDependencies": {
     "@types/jest": "^22.1.3",
