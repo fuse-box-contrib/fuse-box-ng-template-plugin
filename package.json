@@ -31,7 +31,10 @@
     "ng",
     "$templateCache",
     "html",
-    "plugin"
+    "plugin",
+    "angular",
+    "template",
+    "run"
   ],
   "jest": {
     "transform": {
