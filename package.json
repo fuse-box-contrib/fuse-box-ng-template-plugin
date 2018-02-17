@@ -5,12 +5,20 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "repository": "https://github.com/TobiasTimm/fuse-box-ng-template-plugin.git",
-  "author": "Tobias Timm <tbs.timm@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/TobiasTimm/fuse-box-ng-template-plugin/issues"
+  },
+  "homepage": "https://github.com/TobiasTimm/fuse-box-ng-template-plugin#readme",
+  "author": {
+    "name": "Tobias Timm",
+    "email": "tbs.timm@gmail.com",
+    "url": "https://twitter.com/TbsTimm"
+  },
   "license": "MIT",
   "scripts": {
     "build": "npm run clean && npm run lint && tsc",
     "clean": "rimraf dist",
-    "lint": "tslint src/*.ts",
+    "lint": "tslint lib/*.ts",
     "test": "jest"
   },
   "keywords": [
@@ -29,7 +37,14 @@
       "^.+\\.tsx?$": "ts-jest"
     },
     "testRegex": "(.*(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   },
   "devDependencies": {
     "@types/jest": "^22.1.3",

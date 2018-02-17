@@ -4,7 +4,7 @@ node_modules
 .vscode/
 .fusebox
 
-src/
+lib/
 tsconfig.json
 
 *.test.d.ts

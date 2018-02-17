@@ -27,10 +27,44 @@ describe("NgTemplatePlugin", () => {
       plugin.transform(file);
       expect(file.contents).toMatch(`"use strict";
 
-    const angular = require("angular");
+    var angular = require("angular");
     var path = "test.html";
-    var html = "<div>Hello World!</div>";
-    angular.module("ng").run(["$templateCache"], function(c) { c.put(path, html); }]);
+    var html = '<div>Hello World!</div>';
+    angular.module("ng").run(["$templateCache", function(c) { c.put(path, html); }]);
+    module.exports.default = path;
+    `);
+    });
+
+    it("should also transform multi-line html", () => {
+      const file = createFuseFileMock(
+        `<div>
+        <p>My Label</p>
+      </div>`,
+        "multi-line.html"
+      );
+      plugin.transform(file);
+      expect(file.contents).toMatch(`"use strict";
+
+    var angular = require("angular");
+    var path = "multi-line.html";
+    var html = '<div>        <p>My Label</p>      </div>';
+    angular.module("ng").run(["$templateCache", function(c) { c.put(path, html); }]);
+    module.exports.default = path;
+    `);
+    });
+
+    it("should escape single quotes in html", () => {
+      const file = createFuseFileMock(
+        `<div ng-include="'myComponent.html'"></div>`,
+        "single-quotes.html"
+      );
+      plugin.transform(file);
+      expect(file.contents).toMatch(`"use strict";
+
+    var angular = require("angular");
+    var path = "single-quotes.html";
+    var html = '<div ng-include="\\'myComponent.html\\'"></div>';
+    angular.module("ng").run(["$templateCache", function(c) { c.put(path, html); }]);
     module.exports.default = path;
     `);
     });

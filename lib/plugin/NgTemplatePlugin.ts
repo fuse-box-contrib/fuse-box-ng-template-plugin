@@ -60,12 +60,15 @@ export class NgTemplatePluginClass implements Plugin {
 
     file.contents = `"use strict";
 
-    const angular = require("angular");
+    var angular = require("angular");
     var path = "${this.getFilePath(file.info.fuseBoxPath, this.relativeTo)}";
-    var html = "${html}";
+    var html = '${html
+      .split("\n")
+      .join("")
+      .replace(/'/g, "\\'")}';
     angular.module("${
       this.ngModule
-    }").run(["$templateCache"], function(c) { c.put(path, html); }]);
+    }").run(["$templateCache", function(c) { c.put(path, html); }]);
     module.exports.default = path;
     `;
 
@@ -115,13 +118,13 @@ export class NgTemplatePluginClass implements Plugin {
   }
 }
 
-export const NgTemplatePlugin = (
+export function NgTemplatePlugin(
   options: NgTemplatePluginOptions = {
     ext: ".html",
     ngModule: "ng",
     prefix: "",
     relativeTo: ""
   }
-) => {
+) {
   return new NgTemplatePluginClass(options);
-};
+}
