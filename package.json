@@ -1,0 +1,41 @@
+{
+  "name": "fuse-box-ng-template-plugin",
+  "version": "0.0.0",
+  "description": "Includes your AngularJS templates into the fuse-box bundle",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "repository": "https://github.com/TobiasTimm/fuse-box-ng-template-plugin.git",
+  "author": "Tobias Timm <tbs.timm@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "",
+    "clean": "",
+    "test": ""
+  },
+  "keywords": [
+    "fusebox",
+    "fuse-box",
+    "angular1",
+    "angular.js",
+    "angularjs",
+    "ng",
+    "$templateCache",
+    "html",
+    "plugin"
+  ],
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
+  },
+  "devDependencies": {
+    "@types/jest": "^22.1.3",
+    "@types/node": "^9.4.6",
+    "fuse-box": "^3.1.3",
+    "jest": "^22.3.0",
+    "ts-jest": "^22.0.4",
+    "typescript": "^2.7.2"
+  }
+}
