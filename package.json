@@ -20,7 +20,8 @@
     "build": "npm run clean && npm run lint && tsc",
     "clean": "rimraf dist",
     "lint": "tslint lib/*.ts",
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "npm test && npm run build"
   },
   "keywords": [
     "fusebox",
