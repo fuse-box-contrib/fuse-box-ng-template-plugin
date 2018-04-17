@@ -63,7 +63,7 @@ export class NgTemplatePluginClass implements Plugin {
     var angular = require("angular");
     var path = "${this.getFilePath(file.info.fuseBoxPath, this.relativeTo)}";
     var html = '${html
-      .split("\n")
+      .split(/[\r\n]+/)
       .join("")
       .replace(/'/g, "\\'")}';
     angular.module("${
