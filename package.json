@@ -51,7 +51,7 @@
     ]
   },
   "peerDependencies": {
-    "fuse-box": "^3.4.0"
+    "fuse-box": ">=3.4.0"
   },
   "devDependencies": {
     "@types/jest": "^22.1.3",
